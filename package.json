@@ -1,0 +1,19 @@
+{
+  "name": "subreddit_demo_templating",
+  "version": "1.0.0",
+  "description": "udemy - colt steele - templating and ejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "./.git"
+  },
+  "author": "joehinmoro",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3"
+  }
+}
