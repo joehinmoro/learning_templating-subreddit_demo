@@ -12,11 +12,14 @@ const app = express();
 // set app view engine
 app.set("view engine", "ejs");
 // set views directory
-app.set("views", path.join(__dirname, "templates"));
+app.set("views", path.join(__dirname, "views"));
+// set public assets directory
+app.set(express.static(path.join(__dirname, "public")));
 
 // handle get req on root route
 app.get("/", (req, res) => {
-    res.send("working");
+    // render the home view
+    res.send("home", { allSubreddit, title: home });
 });
 
 // handle subreddit routes
