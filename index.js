@@ -4,6 +4,9 @@ const path = require("path");
 
 // require subreddit data
 const allSubreddit = require("./resource/data.json");
+for (let subreddit in allSubreddit) {
+    console.log(subreddit);
+}
 // console.log(allSubreddit);
 
 // execute express server app
@@ -14,12 +17,12 @@ app.set("view engine", "ejs");
 // set views directory
 app.set("views", path.join(__dirname, "views"));
 // set public assets directory
-app.set(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // handle get req on root route
 app.get("/", (req, res) => {
     // render the home view
-    res.send("home", { allSubreddit, title: home });
+    res.render("home", { allSubreddit, title: "Home" });
 });
 
 // handle subreddit routes
@@ -34,6 +37,7 @@ app.get("/r/:subredditName", (req, res) => {
         res.render("subreddit", {
             title: subredditName,
             ...singleSubreddit,
+            allSubreddit,
         });
     } else {
         // false: render 404 page
