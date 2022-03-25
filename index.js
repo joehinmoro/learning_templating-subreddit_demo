@@ -4,9 +4,9 @@ const path = require("path");
 
 // require subreddit data
 const allSubreddit = require("./resource/data.json");
-for (let subreddit in allSubreddit) {
-    console.log(subreddit);
-}
+// for (let subreddit in allSubreddit) {
+//     console.log(subreddit);
+// }
 // console.log(allSubreddit);
 
 // execute express server app
